@@ -1,9 +1,9 @@
 import React from 'react';
 
 function Button(props) {
-  const { children } = props;
+  const { children, type = 'button', onClick } = props;
   return (
-    <button>
+    <button type={ type } onClick={ onClick }>
       { children }
     </button>
   )

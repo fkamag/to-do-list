@@ -1,11 +1,19 @@
 import './App.css';
-import GetStarted from './pages/GetStarted';
+import Home from './pages/Home';
+import SignUp from './pages/SignUp';
+import { Routes, Route } from 'react-router-dom';
+import Provider from './context/Provider';
 
 function App() {
   return (
-    <div className="App">
-      <GetStarted />
-    </div>
+    <Provider>
+      <main className="App">
+        <Routes>
+          <Route path='/' element={ <Home /> } />
+          <Route path='/signup' element={ <SignUp /> } />
+        </Routes>
+      </main>
+    </Provider>
   );
 }
 

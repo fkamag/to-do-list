@@ -3,9 +3,16 @@ import Image from '../components/Image.jsx';
 import GetStartedBanner from '../assets/GetStartedBanner.svg';
 import Title from '../components/Title.jsx';
 import Button from '../components/Button.jsx';
-import styles from './GetStarted.module.css';
+import styles from './Home.module.css';
+import { useNavigate } from 'react-router-dom';
 
-function GetStarted() {
+function Home() {
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate('/signup');
+  }
+
   return (
     <section className={ styles.container }>
       <Image src={ GetStartedBanner } alt="homem sentado" />
@@ -16,11 +23,11 @@ function GetStarted() {
         tempore! Animi nemo aut atque,
         deleniti nihil dolorem repellendus.
       </p>
-      <Button>
+      <Button onClick={ handleClick }>
         Get Started
       </Button>
     </section>
   )
 }
 
-export default GetStarted;
+export default Home;
